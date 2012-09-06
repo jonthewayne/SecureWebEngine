@@ -1,0 +1,1 @@
+We store dumps of the dev and production DBs here. This lets us version them in relation to the rest of the site files and compare DBs before pushing to the live site. 
