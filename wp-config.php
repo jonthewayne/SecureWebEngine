@@ -3,6 +3,8 @@
 if(strpos($_SERVER["DOCUMENT_ROOT"],'Sites') || strpos($_SERVER["DOCUMENT_ROOT"],'staging.securewebengine')) {
 // settings for dev machines & staging server
 
+$serverip = '184.106.55.84'; // used for domain mapping plugin
+
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define('DB_NAME', '328441_swe_staging');
@@ -76,6 +78,17 @@ define('WPLANG', '');
  */
 define('WP_DEBUG', false);
 
+// enable multisite
+define( 'MULTISITE', true );
+define( 'SUBDOMAIN_INSTALL', false );
+$base = '/';
+define( 'DOMAIN_CURRENT_SITE', 'staging.securewebengine.com' );
+define( 'PATH_CURRENT_SITE', '/' );
+define( 'SITE_ID_CURRENT_SITE', 1 );
+define( 'BLOG_ID_CURRENT_SITE', 1 );
+define( 'SUNRISE', 'on' );
+
+
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
@@ -89,6 +102,8 @@ require_once(ABSPATH . 'wp-settings.php');
 
 } else {
 // settings for prod server
+
+$serverip = '184.106.55.84'; // used for domain mapping plugin
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
@@ -156,6 +171,16 @@ define('WPLANG', '');
  * in their development environments.
  */
 define('WP_DEBUG', false);
+
+// enable multisite
+define( 'MULTISITE', true );
+define( 'SUBDOMAIN_INSTALL', false );
+$base = '/';
+define( 'DOMAIN_CURRENT_SITE', 'securewebengine.com' );
+define( 'PATH_CURRENT_SITE', '/' );
+define( 'SITE_ID_CURRENT_SITE', 1 );
+define( 'BLOG_ID_CURRENT_SITE', 1 );
+define( 'SUNRISE', 'on' );
 
 /* That's all, stop editing! Happy blogging. */
 
