@@ -217,6 +217,7 @@ class Mysitemyway {
 		add_filter( 'mysite_read_more', 'mysite_read_more' );
 		add_filter( 'mysite_portfolio_read_more', 'mysite_portfolio_read_more', 1, 2 );
 		add_filter( 'mysite_portfolio_visit_site', 'mysite_portfolio_visit_site', 1, 2 );
+		add_filter( 'mysite_mobile_exclusion', 'mysite_exclude_mobile' );
 				
 		# WordPress filters
 		remove_filter( 'the_content', 'wpautop' );
@@ -1372,5 +1373,8 @@ function mysite_move_footer() {
 if( is_admin_bar_showing() )
 	echo '<style>#footer{top:28px;}</style>';
 }
-
+function mysite_exclude_mobile()
+{
+	return array( 'iPad' );
+}
 ?>
